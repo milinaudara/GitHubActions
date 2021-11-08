@@ -1,8 +1,6 @@
 name: Build
 
 on:
-  push:
-    branches: [ release ]
   pull_request:
     branches: [ release ]
 
@@ -21,5 +19,3 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build GitHubActions/GitHubActions.csproj --no-restore
-    - name: Test
-      run: dotnet test GitHubActions/GitHubActions.csproj --no-build --verbosity normal
